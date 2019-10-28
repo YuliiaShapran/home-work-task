@@ -1,7 +1,5 @@
 package com.hillel.lecture_3;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 /**
  * Created by alpa on 10/22/19
  */
@@ -40,43 +38,33 @@ public class NumberInWordChecker {
         String result = "";
         switch (number) {
             case 1:
-                System.out.println("ONE");
                 result = "ONE";
                 break;
             case 2:
-                System.out.println("TWO");
                 result = "TWO";
                 break;
             case 3:
-                System.out.println("THREE");
                 result = "THREE";
                 break;
             case 4:
-                System.out.println("FOUR");
                 result = "FOUR";
                 break;
             case 5:
-                System.out.println("FIVE");
                 result = "FIVE";
                 break;
             case 6:
-                System.out.println("SIX");
                 result = "SIX";
                 break;
             case 7:
-                System.out.println("SEVEN");
                 result = "SEVEN";
                 break;
             case 8:
-                System.out.println("EIGHT");
                 result = "EIGHT";
                 break;
             case 9:
-                System.out.println("NINE");
                 result = "NINE";
                 break;
             default:
-                System.out.println("OTHER");
                 result = "OTHER";
         }
         return result;
