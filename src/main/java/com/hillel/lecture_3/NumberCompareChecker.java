@@ -10,7 +10,16 @@ public class NumberCompareChecker {
 
 //        TODO implements result
         String result = "";
-
+        if (a > b) {
+            System.out.println("Number " + a + " has greatest value!");
+            result = "Number " + a + " has greatest value!";
+        } else if (a == b) {
+            System.out.println("Numbers " + a + " and " + b + " are equals!");
+            result = "Numbers " + a + " and " + b + " are equals!";
+        } else {
+            System.out.println("Number " + b + " has greatest value!");
+            result = "Number " + b + " has greatest value!";
+        }
         return result;
     }
 }

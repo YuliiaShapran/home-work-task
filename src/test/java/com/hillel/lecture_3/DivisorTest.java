@@ -14,16 +14,16 @@ public class DivisorTest {
 
     @Test
     public void checkThatNumberIsDivisor() {
-        int number = 2;
-        int divisor = 10;
+        int divisor = 2;
+        int number = 10;
 
         assertEquals(divisorChecker.checkDivisor(divisor, number), "The number 2 is divisor of the number 10");
     }
 
     @Test
     public void checkThatNumberIsNotDivisor() {
-        int number = 7;
-        int divisor = 50;
+        int divisor = 7;
+        int number = 50;
 
         assertEquals(divisorChecker.checkDivisor(divisor, number), "The number 7 is not divisor of the number 50");
     }
