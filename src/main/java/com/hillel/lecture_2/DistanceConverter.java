@@ -26,6 +26,7 @@ public class DistanceConverter {
     public double kilometresToMiles(double kilometres) {
 //        TODO implements result
         double result = kilometres / 1.609D;
+        System.out.println(kilometres / 1.609D);
         return result;
     }
 }
