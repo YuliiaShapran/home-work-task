@@ -12,7 +12,6 @@ public class BinaryToDecimalChecker {
 
 //        TODO implements result
         int result = 0;
-
         return result;
     }
 
@@ -21,7 +20,14 @@ public class BinaryToDecimalChecker {
 
 //        TODO implements result
         int result = 0;
+        int p=0;
 
+        while(value != 0)
+        {
+            result+=((value%10) * Math.pow(2,p));
+            value = value/10;
+            p++;
+        }
         return result;
     }
 }
