@@ -36,8 +36,10 @@ public class Formulas {
     public double calculate13Formula(double x) {
         double result = 0.0;
 //        TODO implement formula 13
-        double a = Math.exp(-2d + x);
-        result = Math.pow(a, 1d/5d) * 1 / Math.sqrt(Math.pow(x, 2) + Math.pow(x, 4) + Math.log(Math.abs(x - Math.PI)));
+        //double a = Math.exp(-2d + x);
+        //result = Math.pow(a, 1/2) * 1 / Math.sqrt(Math.pow(x, 2) + Math.pow(x, 4) + Math.log(Math.abs(x - Math.PI)));
+        result = (Math.pow (Math.exp(-2 + x), (1/2))) * (1/(Math.sqrt(Math.pow(x, 2) + Math.pow(x, 4) + Math.log(Math.abs(x - 3.14d)))));
         return result;
+
     }
 }
