@@ -12,16 +12,44 @@ public class SortingChecker {
 
 //        TODO implements result
         int[] result = new int[0];
-
+        int temp;
+        for (int i = 1; i < values.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (values[j] < values[j - 1]) {
+                    temp = values[j];
+                    values[j] = values[j - 1];
+                    values[j - 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < values.length; i++) {
+            System.out.println(values[i]);
+            result  = values;
+        }
         return result;
     }
+
+
 
     @Step
     public int[] fromMaxToMin(int[] values) {
 
 //        TODO implements result
         int[] result = new int[0];
-
+        int temp;
+        for (int i = 1; i < values.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (values[j] > values[j - 1]) {
+                    temp = values[j];
+                    values[j] = values[j - 1];
+                    values[j - 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < values.length; i++) {
+            System.out.println(values[i]);
+            result  = values;
+        }
         return result;
     }
 }

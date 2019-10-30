@@ -11,9 +11,8 @@ public class FibonacciNumbersChecker {
     public int[] getFibonacciNumbers(int number) {
 
 //        TODO implements result
-        int[] result = { };
-
+        int[] result = {};
         return result;
     }
-
 }
+

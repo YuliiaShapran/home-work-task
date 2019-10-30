@@ -12,6 +12,10 @@ public class BinaryToDecimalChecker {
 
 //        TODO implements result
         int result = 0;
+        while(value >= 0){
+            value/= 2;
+            result = result % 2 + value;
+        }
         return result;
     }
 
