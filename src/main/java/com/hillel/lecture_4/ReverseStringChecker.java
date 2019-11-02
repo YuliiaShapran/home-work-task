@@ -11,11 +11,7 @@ public class ReverseStringChecker {
     public String getReversString(String value) {
 
 //        TODO implements result
-        String result = "";
-        char[] reverse = value.toCharArray();
-        for (int i = reverse.length-1; i>=0; i--)
-            System.out.print("" + reverse[i]);
+        String result = ""; //  в result возвр результат
         return result;
     }
-
 }

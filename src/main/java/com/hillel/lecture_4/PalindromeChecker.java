@@ -11,17 +11,15 @@ public class PalindromeChecker {
     public boolean isPalindrome(String value) {
 
 //        TODO implements result
-        //boolean result = false;
+        boolean result = false;
 
-        /*int firstChar = 0;
-        int lastChar = value.length() - 1;
-        while (lastChar > firstChar) {
-            if (value[firstChar] != value[lastChar]) {
+        int n = value.length();
+
+        for (int i = 0; i < (n/2) ; ++i) {
+            if (value.charAt(i) != value.charAt(n - i - 1)){
                 return false;
             }
-            ++firstChar;
-            --lastChar;
-        } */
+        }
         return true;
     }
 
