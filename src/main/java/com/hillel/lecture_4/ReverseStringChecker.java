@@ -12,6 +12,21 @@ public class ReverseStringChecker {
 
 //        TODO implements result
         String result = ""; //  в result возвр результат
+
+        char[] charArray = value.toCharArray();
+        int j = value.length();
+
+        for (int i = j; i > 0; i--) {
+
+            result = result + charArray[i - 1];
+        }
+
+        System.out.print(result);
+
+//        int lastSymbol = value.length() - 1;
+//        for (int i = lastSymbol; i >= 0 ; i--) {
+//            result = result + value.charAt(i);
+//        }
         return result;
     }
 }

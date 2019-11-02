@@ -18,7 +18,6 @@ public class ReverseStringTestTask {
         assertEquals(reverseStringChecker.getReversString(word), expectedResult); ;
     }
 
-
     @DataProvider(name = "stringProvider")
     public static Object[][] stringProvider() {
         return new Object[][] {

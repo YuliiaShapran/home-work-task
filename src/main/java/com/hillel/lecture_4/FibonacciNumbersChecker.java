@@ -12,15 +12,17 @@ public class FibonacciNumbersChecker {
 
 //        TODO implements result
         int[] result = {};
+
         int previousNumber = 0;
         int nextNumber = 1;
 
         for (int i = 1; i <= number ; ++i) {
 
-            System.out.print(previousNumber+" ");
+            System.out.print(previousNumber + " ");
             int sum = previousNumber + nextNumber;
             previousNumber = nextNumber;
             nextNumber = sum;
+
 
         }
        return result;
