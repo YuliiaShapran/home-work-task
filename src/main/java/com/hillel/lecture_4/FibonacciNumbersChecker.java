@@ -11,20 +11,18 @@ public class FibonacciNumbersChecker {
     public int[] getFibonacciNumbers(int number) {
 
 //        TODO implements result
-        int[] result = {};
+        int[] result = new int[number];
 
-        int previousNumber = 0;
-        int nextNumber = 1;
+        result[0] = 0;
+        result[1] = 1;
 
-        for (int i = 1; i <= number ; ++i) {
-
-            System.out.print(previousNumber + " ");
-            int sum = previousNumber + nextNumber;
-            previousNumber = nextNumber;
-            nextNumber = sum;
-
-
+        for (int i = 2; i < number ; i++) {
+            result[i] = result[i - 1] + result[i - 2];
         }
+        for (int i = 0; i < number ; i++) {
+            System.out.print(result[i] + "\t");
+        }
+
        return result;
     }
 }
