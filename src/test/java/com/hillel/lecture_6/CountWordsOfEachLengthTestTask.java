@@ -22,7 +22,7 @@ public class CountWordsOfEachLengthTestTask {
         return new Object[][] {
                 { "Winter is coming.", 7, 1},
                 { "When you play the game of thrones, you win or you die. There is no middle ground.", 3, 5},
-                { "The man who passes the sentence should swing the sword.", 6, 3},
+                { "The man who passes the sentence should swing the sword.", 5, 3},
         };
     }
 }

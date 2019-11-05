@@ -13,8 +13,14 @@ public class CountWordsChecker {
 //        TODO implements result
         int result = 0;
 
+//        if (sentence == null || sentence.isEmpty()) {
+//            return 0;
+//        }
+
+        String[] words = sentence.split(" ");
+        result = words.length;
         return result;
     }
-
-
 }
+
+

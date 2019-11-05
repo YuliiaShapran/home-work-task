@@ -12,6 +12,16 @@ public class CountWordsOfEachLengthChecker {
 
 //        TODO implements result
         int result = 0;
+        int countWord = 0;
+        for (int i = 0; i < sentence.length() ; i++) {
+            if (sentence.charAt(i) == ' ' && sentence.charAt(i+1) != ' '){
+                countWord++;
+                System.out.println(countWord+1);
+
+                result = countWord+1;
+            }
+
+        }
 
         return result;
     }
