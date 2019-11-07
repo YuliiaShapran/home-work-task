@@ -12,19 +12,16 @@ public class CountWordsOfEachLengthChecker {
 
 //        TODO implements result
         int result = 0;
-        int countWord = 0;
-        for (int i = 0; i < sentence.length() ; i++) {
-            if (sentence.charAt(i) == ' ' && sentence.charAt(i+1) != ' '){
-                countWord++;
-                System.out.println(countWord+1);
+        sentence = sentence.replace(",", "").replace(".", "");
+        String[] splittedSentence = sentence.split(" ");
 
-                result = countWord+1;
+        for (String newSentence : splittedSentence) {
+            if (newSentence.length() == wordLength) {
+                result = result + 1;
             }
 
-        }
-
-        return result;
+        } return result;
     }
-
-
 }
+
+

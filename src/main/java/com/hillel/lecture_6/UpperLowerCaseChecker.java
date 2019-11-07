@@ -33,11 +33,14 @@ public class UpperLowerCaseChecker {
 
 //        TODO implements result
         String result = "";
-        String[] arrSplit = sentence.split(".");
-        for (int i = 0; i < arrSplit.length; i++) {
-            System.out.println(arrSplit[i]);
+
+        sentence = sentence.toUpperCase().charAt(0) + sentence.substring(1); // Uppercase only first letter
+        for (int i = 0; i < sentence.length() - 2; i++) {
+            if (sentence.charAt(i) == '.'){
+                sentence = sentence.substring(0, i + 2) + sentence.substring(i + 2, i + 3).toUpperCase() + sentence.substring(i +3);
+            }
         }
-        return result;
+        return sentence;
     }
 
     @Step
@@ -45,22 +48,15 @@ public class UpperLowerCaseChecker {
 
 //        TODO implements result
         String result = "";
-        char[] array = sentence.toCharArray();
-        array[0] = Character.toUpperCase(array[0]); // Uppercase first letter
 
-        // Uppercase all letters that follow a whitespace character
-        for (int i = 1; i < array.length; i++) {
-            if (array[i - 1] == ' '){
-            //if (Character.isWhitespace(array[i - 1])) {
-                array[i] = Character.toUpperCase(array[i]);
+        sentence = sentence.toUpperCase().charAt(0) + sentence.substring(1); // Uppercase only first letter
 
-                String str2 = new String(array);
-                System.out.println(str2);
-//                result = result+array;
-//                System.out.println(array);
+        for (int i = 0; i < sentence.length() - 1; i++) {
+            if (sentence.charAt(i) == ' '){
+                sentence = sentence.substring(0, i + 1) + sentence.substring(i + 1, i + 2).toUpperCase() + sentence.substring(i+2);
             }
         }
 
-        return result;
+        return sentence;
     }
 }
