@@ -49,20 +49,20 @@ public class FractionNumber {
 
 
     public double minusOperation(double numerator, double denominator){
-//        this.numerator = numerator;
-//        this.denominator = denominator;
+        this.numerator = numerator;
+        this.denominator = denominator;
         return numerator - denominator;
     }
 
     public double multiplyOperation(double numerator, double denominator){
-//        this.numerator = numerator;
-//        this.denominator = denominator;
+        this.numerator = numerator;
+        this.denominator = denominator;
         return numerator * denominator;
     }
 
     public double divideOperation(double numerator, double denominator){
-//        this.numerator = numerator;
-//        this.denominator = denominator;
+        this.numerator = numerator;
+        this.denominator = denominator;
         return numerator / denominator;
     }
 
