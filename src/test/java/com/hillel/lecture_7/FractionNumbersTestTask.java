@@ -1,5 +1,9 @@
 package com.hillel.lecture_7;
 
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
 /**
  * Write class to represent FractionNumbers
  * This class should contain two fields.
@@ -9,27 +13,44 @@ package com.hillel.lecture_7;
  * Add tests for check functionality of FractionNumber class
  */
 public class FractionNumbersTestTask {
-    public static void main(String[] args) {
-        FractionNumber fractionNumber = new FractionNumber(12.236, 2.8);
-        double result;
 
-//        fractionNumber.setNumerator(10.2);
-//        fractionNumber.setDenominator(2.7);
+    FractionNumber fractionNumber = new FractionNumber(12.2d, 2.8d);
+    double result;
 
-        System.out.println(fractionNumber.toString());
-
-        result = fractionNumber.plusOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
-        System.out.println(result);
-
-        result = fractionNumber.minusOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
-        System.out.println(result);
-
-        result = fractionNumber.multiplyOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
-        System.out.println(result);
-
-        result = fractionNumber.divideOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
-        System.out.println(result);
-
+    @Test
+    public void toStringTest () {
+        String expectedResult = "FractionNumber{numerator = 12.2, denominator = 2.8}";
+        assertEquals(fractionNumber.toString(),expectedResult);
     }
 
+    @Test
+    public void FractionNumberPlusTest() {
+
+        result = fractionNumber.plusOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
+        assertEquals(result, 15d);
+    }
+
+    @Test
+    public void FractionNumberMinusTest() {
+
+        result = fractionNumber.minusOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
+        assertEquals(result, 9.399999999999999d);
+    }
+
+    @Test
+    public void FractionNumberMultiplyTest() {
+
+        result = fractionNumber.multiplyOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
+        assertEquals(result, 34.16d);
+    }
+
+    @Test
+    public void FractionNumberDivideTest() {
+
+        result = fractionNumber.divideOperation(fractionNumber.getNumerator(), fractionNumber.getDenominator());
+        assertEquals(result, 4.357142857142857D);
+
+    }
 }
+
+
