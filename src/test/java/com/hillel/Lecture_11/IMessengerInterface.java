@@ -1,12 +1,12 @@
 package com.hillel.Lecture_11;
 
 public interface IMessengerInterface {
-    void sendText();
+    void sendText(Contacts contacts);
     void sendPhoto();
     void sendFiles();
     void sendAudio();
 
-    void blockUser();
+    void blockUser(Contacts contacts);
 
     void status();
 
