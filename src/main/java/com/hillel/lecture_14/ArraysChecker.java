@@ -1,5 +1,9 @@
 package com.hillel.lecture_14;
 
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -10,36 +14,48 @@ public class ArraysChecker {
 
     public List<String> getReversList(List<String> list) {
 
-//        TODO implements result
-
-        return list;
+        //List<String> reverseView = Lists.reverse(list); implementation via reverse
+        List<String> list1 = new ArrayList<>();
+        for (String element: list) {
+            list1.add(0, element);
+        }
+        System.out.println(list1);
+        return list1;
     }
 
     public String getLongestString(List<String> list) {
 
-//        TODO implements result
         String result = "";
-
+        int maxLength = 0;
+        for (String element : list) {
+            if (element.length() > maxLength) {
+                maxLength = element.length();
+                result = element;
+            }
+        }
         return result;
     }
 
     public List<String> changeIndex(List<String> list) {
-
-//        TODO implements result
+            list.set(1, "Star Lord");
+            list.set(3, "Captain America");
 
         return list;
     }
 
     public List<String> removeDuplicates(List<String> list) {
+        List<String> list1 = new ArrayList<>();
+        for (String element: list) {
+            if(!list1.contains(element)) {
+                list1.add(element);
+            }
+        }
 
-//        TODO implements result
-
-        return list;
+        return list1;
     }
 
     public List<String> sortList(List<String> list) {
-
-//        TODO implements result
+        Collections.sort(list);
 
         return list;
     }

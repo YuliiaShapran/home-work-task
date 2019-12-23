@@ -16,6 +16,9 @@ public class Viber implements IMessengerInterface, IEditInterface, ISearchInterf
 
     @Override
     public void sendText(Contacts contacts) {
+        if (contacts.getName() == ""){
+            throw new AssertionError ("Can't get contact's name!");
+        }
         System.out.println("Text is send by " + this.name + " to the contact " + contacts.getName() + " with phone number " + contacts.getPhoneNumber());
     }
 
@@ -36,6 +39,9 @@ public class Viber implements IMessengerInterface, IEditInterface, ISearchInterf
 
     @Override
     public void blockUser(Contacts contacts) {
+        if (contacts.getPhoneNumber().contains("+565600000000")){
+            throw new UserIsBlocked("User with such number is in the blacklist of terrorists!");
+        }
         System.out.println("User with id " + this.userId + " and with the name " + contacts.getName() + " is blocked in the " + this.name + " because of his age " + contacts.getAge());
     }
 
