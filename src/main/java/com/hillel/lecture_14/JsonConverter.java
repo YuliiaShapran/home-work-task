@@ -1,6 +1,6 @@
 package com.hillel.lecture_14;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Create json converter. User object should be present in key-value pair, all field should be like Map;
@@ -19,18 +19,67 @@ public class JsonConverter {
 
     public String convertToJsonString(List<User> users) {
 
-//        TODO implements result
         String result = "";
+        String jsonStart = "\"[";
+        String jsonEnd = "]\"";
 
-        return result;
+        for (int i = 0; i <users.size(); i++){
+            if (i != 0){
+                result += ",";
+            }
+            result += convertToJsonString(users.get(i));
+        }
+        return jsonStart + result + jsonEnd;
     }
 
     public String convertToJsonString(User users) {
-
-//        TODO implements result
         String result = "";
+        String jsonOpen = "{";
+        String jsonClose = "}";
 
-        return result;
+        Map<String, String> userInfo = new LinkedHashMap<>();
+        userInfo.put("id", String.valueOf(users.getId()));
+        userInfo.put("firstName", "\"" + users.getFirstName() + "\"");
+        userInfo.put("lastName", "\"" + users.getLastName() + "\"");
+        userInfo.put("age", String.valueOf(users.getAge()));
+        userInfo.put("gender", "\"" + users.getGender() + "\"");
+        userInfo.put("company", "\"" + users.getCompany() + "\"");
+        userInfo.put("email", "\"" + users.getEmail() + "\"");
+
+
+        String userPhone = "";
+        for (int i = 0; i <  users.getPhone().size();i++) {
+            if (i!= 0){
+                userPhone += ",";
+            }
+            userPhone += "\"" + users.getPhone().get(i) + "\"";
+        }
+        userInfo.put("phone", "[" + userPhone + "]");
+
+        String userAddress = "";
+        userAddress = "{" + "\"city\":" + "\"" + users.getAddress().getCity() + "\"," + "\"street\":" + "\"" + users.getAddress().getStreet() + "\"" + "}";
+        userInfo.put("address", userAddress);
+
+        String userFriends = "";
+        for (int i = 0; i < users.getFriends().size(); i++) {
+            if (i != 0) {
+                userFriends += ",";
+            }
+            Friend friend = users.getFriends().get(i);
+            userFriends = "{\"id\":" + friend.getId() + ",\"firstName\":\"" + friend.getFirstName() + "\"" + ",\"lastName\":\"" + friend.getLastName() + "\"}";
+        }
+        userInfo.put("friends", "[" + userFriends + "]");
+
+        Set<Map.Entry<String, String>> entries = userInfo.entrySet();
+        for (Map.Entry<String, String> entry : entries) {
+
+           String row = entry.getKey() + "\"" + ":" + entry.getValue() + ",";
+
+            result += "\"" + row;
+        }
+
+        return jsonOpen + result + jsonClose;
+
     }
 
 
