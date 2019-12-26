@@ -1,5 +1,7 @@
 package com.hillel.lecture_14;
 
+import org.apache.commons.lang.math.NumberUtils;
+
 import java.util.*;
 
 /**
@@ -27,12 +29,12 @@ public class JsonConverter {
             if (i != 0){
                 result += ",";
             }
-            result += convertToJsonString(users.get(i));
+            result += convertUserToJson(users.get(i));
         }
         return jsonStart + result + jsonEnd;
     }
 
-    public String convertToJsonString(User users) {
+    public String convertUserToJson(User users) {
         String result = "";
         String jsonOpen = "{";
         String jsonClose = "}";
@@ -48,15 +50,15 @@ public class JsonConverter {
 
 
         String userPhone = "";
-        for (int i = 0; i <  users.getPhone().size();i++) {
-            if (i!= 0){
+        for (int i = 0; i <  users.getPhone().size(); i++) {
+            if (i != 0){
                 userPhone += ",";
             }
             userPhone += "\"" + users.getPhone().get(i) + "\"";
         }
         userInfo.put("phone", "[" + userPhone + "]");
 
-        String userAddress = "";
+        String userAddress;
         userAddress = "{" + "\"city\":" + "\"" + users.getAddress().getCity() + "\"," + "\"street\":" + "\"" + users.getAddress().getStreet() + "\"" + "}";
         userInfo.put("address", userAddress);
 
@@ -66,14 +68,19 @@ public class JsonConverter {
                 userFriends += ",";
             }
             Friend friend = users.getFriends().get(i);
-            userFriends = "{\"id\":" + friend.getId() + ",\"firstName\":\"" + friend.getFirstName() + "\"" + ",\"lastName\":\"" + friend.getLastName() + "\"}";
+            userFriends += "{\"id\":" + friend.getId() + ",\"firstName\":\"" + friend.getFirstName() + "\"" + ",\"lastName\":\"" + friend.getLastName() + "\"}";
         }
         userInfo.put("friends", "[" + userFriends + "]");
 
+
         Set<Map.Entry<String, String>> entries = userInfo.entrySet();
         for (Map.Entry<String, String> entry : entries) {
-
-           String row = entry.getKey() + "\"" + ":" + entry.getValue() + ",";
+            String row;
+                if (entry.getKey() == "friends") {
+                     row = entry.getKey() + "\"" + ":" + entry.getValue();
+                } else {
+                    row = entry.getKey() + "\"" + ":" + entry.getValue() + ",";
+                }
 
             result += "\"" + row;
         }
@@ -82,5 +89,10 @@ public class JsonConverter {
 
     }
 
-
+    public String convertToJsonString(User users) {
+        String result = "\"";
+        result += convertUserToJson(users);
+        result += "\"";
+        return result;
+    }
 }
